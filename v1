@@ -1,0 +1,39 @@
+import random
+
+def level():
+  difficulty = input("Choose a difficulty 'easy' or 'hard': ")
+  if difficulty == "easy":
+    lives = 10
+    return lives
+  if difficulty == "hard":
+    lives = 5
+    return lives
+
+def game(lives):
+  print(f"Lives: {lives}")
+  if random_number < guess:
+    print("too high")
+    lives -=1
+    return lives
+  if random_number > guess:
+    print("too low")
+    lives -=1
+    return lives
+  
+#Generate random number between 1 - 100 and stores it in random_number
+random_number = random.choice(range(1, 101))
+
+print("Welcome to the Guessing Game!")
+print("I'm thinking of a number between 1 - 100")
+
+#function to choose lives variable
+lives = level()
+
+while lives > 0:
+  guess = int(input("Make a guess: "))
+  lives = game(lives)
+  
+  if random_number == guess:
+    print(f"you guess right! The number is {random_number}")
+  if lives < 1:
+    print(f"You ran out of lives. The number was {random_number}")
